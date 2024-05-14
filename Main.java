@@ -4,11 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Main {
-    static  String number1="";
-    static String number2="";
+    static  String number ="";
     static double result=0;
     static String operation="";
-    static int p=0;
 
     public static void main(String[] args) {
         JFrame frame=new JFrame("CALCULATOR");
@@ -71,126 +69,70 @@ public class Main {
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="1";
-                    display.setText(number1);}
-                else{
-                    number2+="1";
-                    display.setText(number2);}
-            }
+                    number +="1";
+                    display.setText(number);}
         });
         b2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="2";
-                    display.setText(number1);}
-                else{
-                    number2+="2";
-                    display.setText(number2);}
-            }
+                    number +="2";
+                    display.setText(number);}
         });
         b3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="3";
-                    display.setText(number1);}
-                else{
-                    number2+="3";
-                    display.setText(number2);}
-            }
+                    number +="3";
+                    display.setText(number);}
         });
         b4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="4";
-                    display.setText(number1);}
-                else{
-                    number2+="4";
-                    display.setText(number2);}
+                    number +="4";
+                    display.setText(number);
             }
         });
         b5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="5";
-                    display.setText(number1);}
-                else{
-                    number2+="5";
-                    display.setText(number2);}
-            }
+                    number +="5";
+                    display.setText(number);}
         });
         b6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="6";
-                    display.setText(number1);}
-                else{
-                    number2+="6";
-                    display.setText(number2);}
-            }
+                    number +="6";
+                    display.setText(number);}
         });
         b7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="7";
-                    display.setText(number1);}
-                else{
-                    number2+="7";
-                    display.setText(number2);}
-            }
+                    number +="7";
+                    display.setText(number);}
         });
         b8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="8";
-                    display.setText(number1);}
-                else{
-                    number2+="8";
-                    display.setText(number2);}
-            }
+                    number +="8";
+                    display.setText(number);}
         });
         b9.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="9";
-                    display.setText(number1);}
-                else{
-                    number2+="9";
-                    display.setText(number2);}
-            }
+                    number +="9";
+                    display.setText(number);}
         });
         b0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (p%2==0){
-                    number1+="0";
-                    display.setText(number1);}
-                else{
-                    number2+="0";
-                    display.setText(number2);}
-            }
+                    number +="0";
+                    display.setText(number);}
         });
 
         dot.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(p%2==0) {
-                    number1 += ".";
-                    display.setText(number1);
-                }
-                else{
-                    number2+=".";
-                    display.setText(number2);
-                }
-            }
+                    number += ".";
+                    display.setText(number);}
         });
 
         zarb.addActionListener(new ActionListener() {
@@ -200,13 +142,8 @@ public class Main {
                 operation += "*";
                 if(result==0)
                     result++;
-                if (p%2==0)
-                    result*=Double.parseDouble(number1);
-                else
-                    result*=Double.parseDouble(number2);
-                number1="";
-                number2 = "";
-                p++;
+                result*=Double.parseDouble(number);
+                number ="";
             }
         });
         tagsim.addActionListener(new ActionListener() {
@@ -214,13 +151,10 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 display.setText("/");
                 operation+="/";
-                p=0;
                 if(result==0)
                     result++;
-                result*=Double.parseDouble(number1);
-                number1="";
-                number2="";
-                p++;
+                result*=Double.parseDouble(number);
+                number ="";
             }
         });
         plus.addActionListener(new ActionListener() {
@@ -228,14 +162,8 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 display.setText("+");
                 operation+="+";
-
-                if(p%2==0)
-                    result+=Double.parseDouble(number1);
-                if(p%2==1)
-                    result+=Double.parseDouble(number2);
-                number1="";
-                number2="";
-                p++;
+                    result+=Double.parseDouble(number);
+                number ="";
             }
         });
         minus.addActionListener(new ActionListener() {
@@ -243,13 +171,8 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 display.setText("-");
                 operation+="-";
-                if(p%2==0)
-                    result-=Double.parseDouble(number1);
-                if(p%2==1)
-                    result-=Double.parseDouble(number2);
-                number1="";
-                number2="";
-                p++;
+                    result+=Double.parseDouble(number);
+                number ="";
             }
         });
         mosavi.addActionListener(new ActionListener() {
@@ -257,31 +180,18 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 display.setText("");
                 if (operation.charAt(operation.length() - 1) == '*') {
-                    if (p % 2 == 1)
-                        result *= Double.parseDouble(number2);
-                    else
-                        result *= Double.parseDouble(number1);
+                        result *= Double.parseDouble(number);
                 }
                 if (operation.charAt(operation.length() - 1) == '/') {
-                    if (p % 2 == 1)
-                        result /= Double.parseDouble(number2);
-                    else
-                        result /= Double.parseDouble(number1);
+                        result /= Double.parseDouble(number);
                 }
                 if (operation.charAt(operation.length() - 1) == '+') {
-                    if (p % 2 == 1)
-                        result += Double.parseDouble(number2);
-                    else
-                        result += Double.parseDouble(number1);
+                        result += Double.parseDouble(number);
                 }
                 if (operation.charAt(operation.length() - 1) == '-') {
-                    if (p % 2 == 1)
-                        result -= Double.parseDouble(number2);
-                    else
-                        result -= Double.parseDouble(number1);
+                        result -= Double.parseDouble(number);
                 }
-                number2 = "";
-                number1 = "";
+                number = "";
                 display.setText(String.valueOf(result));
             }
         });
@@ -289,11 +199,9 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 display.setText("");
-                number1="";
-                number2="";
-                p=0;
-                result=1;
+                number ="";
                 operation="";
+                result = 0;
             }
         });
         frame.setVisible(true);
